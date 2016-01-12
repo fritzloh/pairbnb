@@ -1,0 +1,31 @@
+<h1>Home#index</h1>
+<p>Find me in app/views/home/index.html.erb</p>
+
+
+ <% if signed_in? %>
+      Signed in as: <%= current_user.email %>
+      <%= button_to 'Sign out', sign_out_path, method: :delete %>
+    <% else %>
+      <%= link_to 'Sign in', sign_in_path %>
+    <% end %>
+
+    <div id="flash">
+      <% flash.each do |key, value| %>
+        <div class="flash <%= key %>"><%= value %></div>
+      <% end %>
+    </div>
+
+
+<ul>
+<% flash.each do |key, msg| %>
+  <%= content_tag :li, msg, id: key %>
+<% end %>
+</ul>
+
+
+
+<% if signed_in? %>
+<p><%= link_to 'Sign Out', signout_path %></p>
+<% else %>
+<p><%= link_to 'Sign in with Facebook', signin_path %></p>
+<% end %>
