@@ -1,11 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'acts-as-taggable-on', '~> 3.4'
-gem 'protected_attributes'
-gem 'figaro'
-gem 'omniauth'
-gem 'omniauth-facebook'
-gem 'clearance'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # Use postgresql as the database for Active Record
@@ -30,7 +25,13 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'acts-as-taggable-on', '~> 3.4'
+gem 'protected_attributes'
+gem 'figaro'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'clearance'
+gem 'carrierwave'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
