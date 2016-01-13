@@ -4,7 +4,11 @@ class ListingsController < ApplicationController
   # GET /listings
   # GET /listings.json
   def index
-    @listings = Listing.all
+    if params[:tag]
+      @listings = Listing.tagged_with(params[:tag])
+    else
+      @listings = Listing.all
+    end
   end
 
   # GET /listings/1
@@ -69,6 +73,12 @@ class ListingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def listing_params
-      params.require(:listing).permit(:title, :property_type, :bedrooms, :country, :street_address, :city, :state, :zipcode)
+      params.require(:listing).permit(:title, :property_type, :bedrooms, :country, :street_address, :city, :state, :zipcode, :tag_list)
     end
+
+
+
+    
+
+
 end

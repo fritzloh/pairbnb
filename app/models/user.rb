@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
   include Clearance::User
+  
+
+  has_many :listings
 
   def self.create_with_omniauth(auth)
   create! do |user|

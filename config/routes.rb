@@ -1,21 +1,24 @@
 Rails.application.routes.draw do
   resources :listings
-  get 'home/index'
 
 
 
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
    root 'home#index'
 
+  get 'tags/:tag' => 'listings#index', :as => :tag
 
   get '/auth/:provider/callback' => 'sessions#create_facebook'
 
   get '/signout' => 'sessions#destroy_facebook', :as => :signout
 
   get '/signin' => 'sessions#new_facebook', :as => :signin
+
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
